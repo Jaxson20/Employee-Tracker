@@ -5,7 +5,7 @@ const connection = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME, // Specify the database name from your .env file
+  database: process.env.DB_NAME, 
 });   
 
 
@@ -76,7 +76,6 @@ function mainMenu() {
 
 // Function to view all departments
 function viewDepartments() {
-  // Write and execute SQL query to view departments
   const query = 'SELECT * FROM department_db.departments';
   connection1.query(query, (err, results) => {
     if (err) {
@@ -90,7 +89,6 @@ function viewDepartments() {
 
 // Function to view all roles
 function viewRoles() {
-  // Write and execute SQL query to view roles
   const query = 'SELECT * FROM roles_db.roles';
   connection2.query(query, (err, results) => {
     if (err) {
@@ -104,7 +102,6 @@ function viewRoles() {
 
 // Function to view all employees
 function viewEmployees() {
-  // Write and execute SQL query to view employees
   const query = 'SELECT * FROM employees_db.employees';
   connection3.query(query, (err, results) => {
     if (err) {
@@ -125,7 +122,6 @@ function addDepartment() {
       message: 'Enter the name of the department:',
     })
     .then((answers) => {
-      // Write and execute SQL query to add a department
       const query = 'INSERT INTO departments (name) VALUES (?)';
       connection.query(query, [answers.name], (err, results) => {
         if (err) {
@@ -152,10 +148,8 @@ function addRole() {
         name: 'salary',
         message: 'Enter the salary for the role:',
       },
-      // You can add more prompts for role-related information here
     ])
     .then((answers) => {
-      // Write and execute SQL query to add a role
       const query = 'INSERT INTO roles (title, salary) VALUES (?, ?)';
       connection.query(query, [answers.title, answers.salary], (err, results) => {
         if (err) {
@@ -182,10 +176,8 @@ function addEmployee() {
         name: 'last_name',
         message: 'Enter the last name of the employee:',
       },
-      // You can add more prompts for employee-related information here
     ])
     .then((answers) => {
-      // Write and execute SQL query to add an employee
       const query = 'INSERT INTO employees (first_name, last_name) VALUES (?, ?)';
       connection.query(query, [answers.first_name, answers.last_name], (err, results) => {
         if (err) {
@@ -200,7 +192,6 @@ function addEmployee() {
 
 // Function to update an employee's role
 function updateEmployeeRole() {
-    // Prompt to select an employee to update
     inquirer
       .prompt([
         {
@@ -215,7 +206,6 @@ function updateEmployeeRole() {
         },
       ])
       .then((answers) => {
-        // Write and execute SQL query to update employee's role
         const query = 'UPDATE employees SET role_id = ? WHERE id = ?';
         connection.query(
           query,
