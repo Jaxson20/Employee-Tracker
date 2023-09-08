@@ -4,6 +4,6 @@ CREATE TABLE IF NOT EXISTS employees (
   last_name VARCHAR(255) NOT NULL,
   job_title VARCHAR(255) NOT NULL,
   salary DECIMAL(10, 2) NOT NULL,
-  department_id INT, -- Foreign key reference to departments table
+  department_id INT, 
   FOREIGN KEY (department_id) REFERENCES department_db.departments(id)
 );

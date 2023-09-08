@@ -38,14 +38,12 @@ const roleData = [
   { title: 'Software Engineer', salary: 80000.00 },
   { title: 'Marketing Manager', salary: 70000.00 },
   { title: 'Financial Analyst', salary: 75000.00 },
-  // Add more roles as needed
 ];
 
 const employeeData = [
   { first_name: 'John', last_name: 'Doe', job_title: 'Software Engineer', salary: 80000.00 },
   { first_name: 'Jane', last_name: 'Smith', job_title: 'Marketing Manager', salary: 70000.00 },
   { first_name: 'Bob', last_name: 'Johnson', job_title: 'Financial Analyst', salary: 75000.00 },
-  // Add more employees as needed
 ];
 
 // Insert data into each table
